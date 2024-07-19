@@ -253,6 +253,7 @@ class HomeScreen extends StatelessWidget {
                       height: 250.h,
                     ),
                     ButtonsForServices(
+                      color: AppColors.deepYellow,
                       text: 'Internal Development',
                       onPressed: () {},
                       width: 240.w,
@@ -267,6 +268,7 @@ class HomeScreen extends StatelessWidget {
                       height: 250.h,
                     ),
                     ButtonsForServices(
+                      color: AppColors.deepYellow,
                       text: 'Impression Appearing',
                       onPressed: () {},
                       width: 240.w,
@@ -281,6 +283,7 @@ class HomeScreen extends StatelessWidget {
                       height: 250.h,
                     ),
                     ButtonsForServices(
+                      color: AppColors.deepYellow,
                       text: 'E-Marketing',
                       onPressed: () {},width: 240.w,
                       height: 60.h,
@@ -306,7 +309,11 @@ class HomeScreen extends StatelessWidget {
                       text: 'What we distinguish from others ?',
                      color: AppColors.deepPink,
                       onPressed: () {},
+                      width: 320.w,
+                      height: 60.h,
                     ),
+                    SizedBox(height: 40.h,),
+                    Image.asset('assets/images/videohome.gif'),
                   ],
                 ),
               ),

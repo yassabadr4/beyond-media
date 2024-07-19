@@ -1,5 +1,4 @@
-import 'package:beyond_media/core/colors/app_colors.dart';
-import 'package:beyond_media/features/home/presentation/view/home.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -46,12 +45,12 @@ final Color colorSide;
   }
 }
 class ButtonsForServices extends StatelessWidget {
-  const ButtonsForServices({super.key, required this.onPressed, required this.text, this.width, this.height, this.color,});
+  const ButtonsForServices({super.key, required this.onPressed, required this.text, this.width, this.height, required this.color,});
 final void Function() onPressed;
 final String text;
 final double? width;
 final double? height;
-final Color? color ;
+final Color color ;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +66,7 @@ final Color? color ;
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
             side: BorderSide(
-                color: AppColors.deepYellow, width: 2.0),
+                color: color, width: 2.0),
           ),
           padding: const EdgeInsets.symmetric(
               vertical: 20.0),
@@ -80,13 +79,13 @@ final Color? color ;
             Text(
               text.toUpperCase(),
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1,
               ),
             ),
-            SizedBox(width: 10.0),
-            Icon(Icons.arrow_forward, size: 16.0),
+            const SizedBox(width: 10.0),
+            const Icon(Icons.arrow_forward, size: 16.0),
           ],
         ),
       ),
