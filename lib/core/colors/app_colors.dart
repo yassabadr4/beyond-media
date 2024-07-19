@@ -6,4 +6,5 @@ abstract class AppColors {
   static Color deepBlue2 = const Color(0xff111E5A);
   static Color deepBlue3 = const Color(0xff29437E);
   static Color deepBlack = const Color(0xff222222);
+  static Color deepPink = const Color(0xffBD10E0);
 }

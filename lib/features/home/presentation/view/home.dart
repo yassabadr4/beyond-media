@@ -1,6 +1,7 @@
 import 'package:beyond_media/core/colors/app_colors.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/custom_button.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/image_reuse.dart';
+import 'package:beyond_media/features/home/presentation/view/widgets/text_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -70,8 +71,9 @@ class HomeScreen extends StatelessWidget {
                         height: 20,
                       ),
                       CustomButton(
-                          backgroundColor: AppColors.deepBlue2,
-                          colorSide: Colors.orange,),
+                        backgroundColor: AppColors.deepBlue2,
+                        colorSide: Colors.orange,
+                      ),
                       SizedBox(
                         height: 10.h,
                       ),
@@ -115,8 +117,9 @@ class HomeScreen extends StatelessWidget {
                         height: 20.h,
                       ),
                       CustomButton(
-                          backgroundColor: AppColors.deepYellow,
-                          colorSide: AppColors.deepBlue2,)
+                        backgroundColor: AppColors.deepYellow,
+                        colorSide: AppColors.deepBlue2,
+                      )
                     ],
                   ),
                 ),
@@ -152,9 +155,9 @@ class HomeScreen extends StatelessWidget {
                         height: 20.h,
                       ),
                       CustomButton(
-                          backgroundColor: AppColors.deepBlue3,
-                          colorSide: Colors.orange,),
-
+                        backgroundColor: AppColors.deepBlue3,
+                        colorSide: Colors.orange,
+                      ),
                       Expanded(
                         child: Image.asset(
                           'assets/images/ImpressionAppearing.png',
@@ -170,9 +173,10 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 4,
                 decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/stars.gif'),
-                        fit: BoxFit.fill)),
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/stars.gif'),
+                      fit: BoxFit.cover),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -240,23 +244,68 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 20.h,),
-                    ImageReuse(imgPath: 'assets/images/internal.png',width: 300.w,height: 250.h,),
-                     ButtonsForServices(
-                       text: 'Internal Development',
-                      onPressed: (){},
+                    SizedBox(
+                      height: 20.h,
                     ),
-                    SizedBox(height: 20.h,),
-                    ImageReuse(imgPath: 'assets/images/Impression.png',width: 300.w,height: 250.h,),
+                    ImageReuse(
+                      imgPath: 'assets/images/internal.png',
+                      width: 300.w,
+                      height: 250.h,
+                    ),
+                    ButtonsForServices(
+                      text: 'Internal Development',
+                      onPressed: () {},
+                      width: 240.w,
+                      height: 60.h,
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    ImageReuse(
+                      imgPath: 'assets/images/Impression.png',
+                      width: 300.w,
+                      height: 250.h,
+                    ),
                     ButtonsForServices(
                       text: 'Impression Appearing',
-                      onPressed: (){},
+                      onPressed: () {},
+                      width: 240.w,
+                      height: 60.h,
                     ),
-                    SizedBox(height: 20.h,),
-                    ImageReuse(imgPath: 'assets/images/e-marketing.png',width: 300.w,height: 250.h,),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    ImageReuse(
+                      imgPath: 'assets/images/e-marketing.png',
+                      width: 300.w,
+                      height: 250.h,
+                    ),
                     ButtonsForServices(
                       text: 'E-Marketing',
-                      onPressed: (){},
+                      onPressed: () {},width: 240.w,
+                      height: 60.h,
+                    ),
+                     SizedBox(
+                      height: 25.h,
+                    ),
+                    TextButtonsReuse(
+                      text: 'About >',
+                      onPressed: () {},
+                    ),
+                    SizedBox(
+                      height: 25.h,
+                    ),
+                    TextButtonsReuse(
+                      text: 'Contact >',
+                      onPressed: () {},
+                    ),
+                    SizedBox(
+                      height: 25.h,
+                    ),
+                    ButtonsForServices(
+                      text: 'What we distinguish from others ?',
+                     color: AppColors.deepPink,
+                      onPressed: () {},
                     ),
                   ],
                 ),
@@ -268,4 +317,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

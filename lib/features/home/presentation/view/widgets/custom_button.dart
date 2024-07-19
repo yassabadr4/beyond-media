@@ -46,14 +46,19 @@ final Color colorSide;
   }
 }
 class ButtonsForServices extends StatelessWidget {
-  const ButtonsForServices({super.key, required this.onPressed, required this.text});
+  const ButtonsForServices({super.key, required this.onPressed, required this.text, this.width, this.height, this.color,});
 final void Function() onPressed;
 final String text;
+final double? width;
+final double? height;
+final Color? color ;
+
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: 240.w,
-      height: 60.h,
+      width: width,
+      height: height,
+      //240w, 60h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.white,
@@ -74,9 +79,10 @@ final String text;
           children: [
             Text(
               text.toUpperCase(),
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
+                letterSpacing: 1,
               ),
             ),
             SizedBox(width: 10.0),
