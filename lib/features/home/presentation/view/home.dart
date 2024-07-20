@@ -171,7 +171,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 4,
+                height: MediaQuery.of(context).size.height * 4.8,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/stars.gif'),
@@ -285,10 +285,11 @@ class HomeScreen extends StatelessWidget {
                     ButtonsForServices(
                       color: AppColors.deepYellow,
                       text: 'E-Marketing',
-                      onPressed: () {},width: 240.w,
+                      onPressed: () {},
+                      width: 240.w,
                       height: 60.h,
                     ),
-                     SizedBox(
+                    SizedBox(
                       height: 25.h,
                     ),
                     TextButtonsReuse(
@@ -307,13 +308,265 @@ class HomeScreen extends StatelessWidget {
                     ),
                     ButtonsForServices(
                       text: 'What we distinguish from others ?',
-                     color: AppColors.deepPink,
+                      color: AppColors.deepPink,
                       onPressed: () {},
                       width: 320.w,
                       height: 60.h,
                     ),
-                    SizedBox(height: 40.h,),
+                    SizedBox(
+                      height: 60.h,
+                    ),
                     Image.asset('assets/images/videohome.gif'),
+                    SizedBox(
+                      height: 60.h,
+                    ),
+                    Text(
+                      'Our Story',
+                      style: TextStyle(
+                          fontSize: 35.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Column(
+                        children: [
+                          Text(
+                            'We are a multi-disiplinary digital design agency',
+                            style: TextStyle(
+                                fontSize: 25.sp,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.orange),
+                          ),
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Text(
+                            'committed to making the web better & beautiful.',
+                            style: TextStyle(
+                                fontSize: 25.sp,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.orangeAccent),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            'Beyond Media Internet Marketing Agency established in 2019 as a full-service creative agency that provides a wide range of services to local and international companies in almost all aspects of marketing and advertising whether offline or online.',
+                            style: TextStyle(
+                              fontSize: 25.sp,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30.h,
+              ),
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 3.8,
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 60),
+                              child: Text(
+                                'We love',
+                                style: TextStyle(
+                                    fontSize: 30.sp,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                            Text(
+                              'what we do',
+                              style: TextStyle(
+                                  fontSize: 30.sp, fontWeight: FontWeight.w700),
+                            ),
+                            SizedBox(
+                              height: 30.h,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Text(
+                        'Beyond Media Internet Marketing Agency established in 2019 as a full-service creative agency that provides a wide range of services to local and international companies in almost all aspects of marketing and advertising whether offline or online.',
+                        style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Row(
+                        children: [
+                           Text(
+                            'As a full-service ',
+                            style: TextStyle(
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          Expanded(
+                            child: TextButton(
+                                onPressed: () {},
+                                child:  Text(
+                                  'Digital Marketing Agency',
+                                  style: TextStyle(
+                                    color: Colors.orange,
+                                    fontSize: 20.sp,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                     Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'we provide WebSite design, Web Hosting services , SEO, Social Media, Email Marketing, Content Writing and Internet Marketing to Businesses large and small that are looking to broadcast their messages more efficiently.',
+                            style: TextStyle(
+                                fontSize: 20.sp, fontWeight: FontWeight.w400),
+                          )),
+                    ),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    ImageReuse(
+                      imgPath: 'assets/images/web development.png',
+                      width: MediaQuery.of(context).size.width - 20,
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Container(
+                      color: AppColors.deepYellow,
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      height: MediaQuery.of(context).size.height * 1.8,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            ImageReuse(
+                              imgPath: 'assets/images/lamp.png',
+                              height: 70.h,
+                              width: 70.w,
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(
+                              'DIGITAL MARKETING SERVICE',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.deepBlue3,
+                              ),
+                            ),
+                            SizedBox(height: 10.h,),
+                            Text(
+                              'A great idea only succeeds if it is packaged and exposed perfectly.',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            Text(
+                              'Beyond Media perspective is passionately working hard to develop great innovative ideas that matter effectively to our dear clients.',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 40.h,
+                            ),
+                            ImageReuse(
+                              imgPath: 'assets/images/rocket.png',
+                              height: 70.h,
+                              width: 70.w,
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(
+                              'BRANDING',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.deepBlue3,
+                              ),
+                            ),
+                            SizedBox(height: 10.h,),
+                            Text(
+                              'Do businesses have their own IDs? Yes, they do and this ID is the Logo and Brand Identity. At Beyond Media we create the visual presence of your business with creative and convenient designs to match your needs and the principles of the market.',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 40.h,
+                            ),
+                            ImageReuse(imgPath: 'assets/images/camera.png',width: 70.w,height: 70.h,),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(
+                              'MEDIA PRODUCTION',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w900,
+                                color: AppColors.deepBlue3,
+                              ),
+                            ),
+                            SizedBox(height: 10.h,),
+                            Text(
+                              'Beyond Media advertising agency provides out of the box media production variety digital media accountable servicing. Beyond Media is actively producing high quality media content and digital video projects.',
+                              style: TextStyle(
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.h,),
+                    Text('Beyond Media Clients', style: TextStyle(
+                      color: AppColors.deepBlue2,
+                      fontSize: 35.sp,
+                      fontWeight: FontWeight.w700,
+                    ),)
                   ],
                 ),
               ),
