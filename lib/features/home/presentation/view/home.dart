@@ -586,13 +586,13 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 50.h,
                     ),
-                    ClientsImages(),
+                    const ClientsImages(),
                   ],
                 ),
               ),
               Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 4.8,
+                height: MediaQuery.of(context).size.height * 1.9,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/stars.gif'),
@@ -601,7 +601,9 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 20.h,),
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 70),
                       child: Text(
@@ -626,40 +628,40 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height:50.h),
+                    SizedBox(height: 50.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
-                          width: MediaQuery.of(context).size.width /2.3,
+                          width: MediaQuery.of(context).size.width / 2.3,
                           child: TextFormField(
-                            decoration: InputDecoration(
-                              hintText: 'Name',
-                              fillColor: Colors.white,
-                              filled: true,
-                              border: OutlineInputBorder()
-                            ),
+                            decoration: const InputDecoration(
+                                hintText: 'Name',
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: OutlineInputBorder()),
                           ),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width /2.3,
+                          width: MediaQuery.of(context).size.width / 2.3,
                           child: TextFormField(
-                            decoration: InputDecoration(
-                              hintText: 'Email',
-                              fillColor: Colors.white,
-                              filled: true,
-                              border: OutlineInputBorder()
-                            ),
+                            decoration: const InputDecoration(
+                                hintText: 'Email',
+                                fillColor: Colors.white,
+                                filled: true,
+                                border: OutlineInputBorder()),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 30.h,),
+                    SizedBox(
+                      height: 30.h,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: TextFormField(
                         maxLines: 8,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Message',
                           border: OutlineInputBorder(),
                           fillColor: Colors.white,
@@ -667,40 +669,230 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20.h,),
+                    SizedBox(
+                      height: 20.h,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           fillColor: Colors.white,
                           filled: true,
                         ),
                       ),
                     ),
-                    SizedBox(height: 30.h,),
+                    SizedBox(
+                      height: 30.h,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        IconButton(onPressed: (){}, icon: Icon(Icons.facebook_outlined,size: 50.sp,)),
-                        SizedBox(width: 20.w,),
-                        IconButton(onPressed: (){}, icon: Icon(Icons.monochrome_photos_sharp,size: 50.sp,)),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.facebook_outlined,
+                              size: 50.sp,
+                            )),
+                        SizedBox(
+                          width: 20.w,
+                        ),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.monochrome_photos_sharp,
+                              size: 50.sp,
+                            )),
                       ],
                     ),
                     SizedBox(height: 50.h),
                     CircleAvatar(
                       radius: 40,
                       backgroundColor: Colors.grey.withOpacity(0.2),
-                      child: IconButton(onPressed: (){}, icon: Icon(Icons.phone,size: 50.sp,color: Colors.white,)),
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.phone,
+                            size: 50.sp,
+                            color: Colors.white,
+                          )),
                     ),
-                    SizedBox(height: 20,),
-                    Text('Call Us +20 128 209 2419',
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Call Us +20 128 209 2419',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w700,
-                      ),)
+                      ),
+                    ),
+                    SizedBox(height: 30.h),
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.grey.withOpacity(0.2),
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.mail,
+                            size: 50.sp,
+                            color: Colors.white,
+                          )),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Mail Us info@beyondmediagr.com',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(height: 30.h),
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.grey.withOpacity(0.2),
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.map_outlined,
+                            size: 50.sp,
+                            color: Colors.white,
+                          )),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Visit Us Heliopolis, Cairo',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 59.h,
+                    ),
                   ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 1,
+                color: Colors.white60,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 30.h),
+                      Text(
+                        'Beyond Media',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.deepYellow2,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      const Text(
+                        'We provide our customers with distinctive designs, high quality, compatible with all devices, and also compatible with Google policies. For your site to be search engine friendly to get more visitors and increase your company’s sales.',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        'Our Services',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.deepYellow2,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        '> Impression Appearing',
+
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        '> E-Marketing',
+
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        '> Internal Development',
+
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(height: 50.h,),
+                      Text(
+                        'Contact'.toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.deepYellow2,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        'Address: Heliopolis, Cairo',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        'Phone : +20 128 209 2419',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        'E-mail: info@beyondmediagr.com',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
