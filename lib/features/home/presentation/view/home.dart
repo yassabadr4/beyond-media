@@ -1,4 +1,5 @@
 import 'package:beyond_media/core/colors/app_colors.dart';
+import 'package:beyond_media/features/home/presentation/view/widgets/clients_images.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/custom_button.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/image_reuse.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/text_buttons.dart';
@@ -423,7 +424,7 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Row(
                         children: [
-                           Text(
+                          Text(
                             'As a full-service ',
                             style: TextStyle(
                               fontSize: 20.sp,
@@ -433,7 +434,7 @@ class HomeScreen extends StatelessWidget {
                           Expanded(
                             child: TextButton(
                                 onPressed: () {},
-                                child:  Text(
+                                child: Text(
                                   'Digital Marketing Agency',
                                   style: TextStyle(
                                     color: Colors.orange,
@@ -445,7 +446,7 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                     Padding(
+                    Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Align(
                           alignment: Alignment.topLeft,
@@ -492,7 +493,9 @@ class HomeScreen extends StatelessWidget {
                                 color: AppColors.deepBlue3,
                               ),
                             ),
-                            SizedBox(height: 10.h,),
+                            SizedBox(
+                              height: 10.h,
+                            ),
                             Text(
                               'A great idea only succeeds if it is packaged and exposed perfectly.',
                               style: TextStyle(
@@ -526,7 +529,9 @@ class HomeScreen extends StatelessWidget {
                                 color: AppColors.deepBlue3,
                               ),
                             ),
-                            SizedBox(height: 10.h,),
+                            SizedBox(
+                              height: 10.h,
+                            ),
                             Text(
                               'Do businesses have their own IDs? Yes, they do and this ID is the Logo and Brand Identity. At Beyond Media we create the visual presence of your business with creative and convenient designs to match your needs and the principles of the market.',
                               style: TextStyle(
@@ -537,7 +542,11 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(
                               height: 40.h,
                             ),
-                            ImageReuse(imgPath: 'assets/images/camera.png',width: 70.w,height: 70.h,),
+                            ImageReuse(
+                              imgPath: 'assets/images/camera.png',
+                              width: 70.w,
+                              height: 70.h,
+                            ),
                             SizedBox(
                               height: 10.h,
                             ),
@@ -549,7 +558,9 @@ class HomeScreen extends StatelessWidget {
                                 color: AppColors.deepBlue3,
                               ),
                             ),
-                            SizedBox(height: 10.h,),
+                            SizedBox(
+                              height: 10.h,
+                            ),
                             Text(
                               'Beyond Media advertising agency provides out of the box media production variety digital media accountable servicing. Beyond Media is actively producing high quality media content and digital video projects.',
                               style: TextStyle(
@@ -561,12 +572,134 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      height: 40.h,
+                    ),
+                    Text(
+                      'Beyond Media Clients',
+                      style: TextStyle(
+                        color: AppColors.deepBlue2,
+                        fontSize: 35.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 50.h,
+                    ),
+                    ClientsImages(),
+                  ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 4.8,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/stars.gif'),
+                      fit: BoxFit.cover),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
                     SizedBox(height: 20.h,),
-                    Text('Beyond Media Clients', style: TextStyle(
-                      color: AppColors.deepBlue2,
-                      fontSize: 35.sp,
-                      fontWeight: FontWeight.w700,
-                    ),)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 70),
+                      child: Text(
+                        'Communication is Everything',
+                        style: TextStyle(
+                            fontSize: 32.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.orange),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'We love to listen and we are eagerly waiting to talk to you regarding your project. Get in touch with us if you have any queries and we will get back to you as soon as possible.',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height:50.h),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width /2.3,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: 'Name',
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: OutlineInputBorder()
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width /2.3,
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: 'Email',
+                              fillColor: Colors.white,
+                              filled: true,
+                              border: OutlineInputBorder()
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30.h,),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: TextFormField(
+                        maxLines: 8,
+                        decoration: InputDecoration(
+                          hintText: 'Message',
+                          border: OutlineInputBorder(),
+                          fillColor: Colors.white,
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.h,),
+                    Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          fillColor: Colors.white,
+                          filled: true,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30.h,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(onPressed: (){}, icon: Icon(Icons.facebook_outlined,size: 50.sp,)),
+                        SizedBox(width: 20.w,),
+                        IconButton(onPressed: (){}, icon: Icon(Icons.monochrome_photos_sharp,size: 50.sp,)),
+                      ],
+                    ),
+                    SizedBox(height: 50.h),
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Colors.grey.withOpacity(0.2),
+                      child: IconButton(onPressed: (){}, icon: Icon(Icons.phone,size: 50.sp,color: Colors.white,)),
+                    ),
+                    SizedBox(height: 20,),
+                    Text('Call Us +20 128 209 2419',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                      ),)
                   ],
                 ),
               ),
