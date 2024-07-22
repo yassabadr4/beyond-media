@@ -1,18 +1,85 @@
 import 'package:beyond_media/core/colors/app_colors.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/clients_images.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/custom_button.dart';
+import 'package:beyond_media/features/home/presentation/view/widgets/custom_text_button.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/image_reuse.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/text_buttons.dart';
+import 'package:beyond_media/features/internal_development/peresentation/view/e_marketing.dart';
+import 'package:beyond_media/features/internal_development/peresentation/view/internal_development_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomTextButton(
+                text: 'HOME',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'STORY',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'ABOUT',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'SERVICES',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'OUR SYSTEMS',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'BLOG',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'SHOP',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'FAQ',
+                onPressed: () {},
+              ),
+              Divider(),
+              CustomTextButton(
+                text: 'CONTACT',
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
         backgroundColor: AppColors.deepBlue,
         title: Image.asset(
           'assets/images/dark.png',
@@ -22,18 +89,11 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
             icon: const Icon(Icons.shopping_bag_outlined, color: Colors.white),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.menu, color: Colors.white),
+            icon: const Icon(Icons.search, color: Colors.white),
           ),
         ],
       ),
@@ -74,6 +134,15 @@ class HomeScreen extends StatelessWidget {
                       CustomButton(
                         backgroundColor: AppColors.deepBlue2,
                         colorSide: Colors.orange,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const InternalDevelopmentScreen(),
+                            ),
+                          );
+                        },
                       ),
                       SizedBox(
                         height: 10.h,
@@ -120,6 +189,14 @@ class HomeScreen extends StatelessWidget {
                       CustomButton(
                         backgroundColor: AppColors.deepYellow,
                         colorSide: AppColors.deepBlue2,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => EMarketing(),
+                            ),
+                          );
+                        },
                       )
                     ],
                   ),
@@ -822,9 +899,8 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Text(
+                      const Text(
                         '> Impression Appearing',
-
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
@@ -833,9 +909,8 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Text(
+                      const Text(
                         '> E-Marketing',
-
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
@@ -844,15 +919,16 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Text(
+                      const Text(
                         '> Internal Development',
-
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      SizedBox(height: 50.h,),
+                      SizedBox(
+                        height: 50.h,
+                      ),
                       Text(
                         'Contact'.toUpperCase(),
                         style: TextStyle(
@@ -864,7 +940,7 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Text(
+                      const Text(
                         'Address: Heliopolis, Cairo',
                         style: TextStyle(
                           fontSize: 14,
@@ -874,7 +950,7 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Text(
+                      const Text(
                         'Phone : +20 128 209 2419',
                         style: TextStyle(
                           fontSize: 14,
@@ -884,7 +960,7 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 30.h,
                       ),
-                      Text(
+                      const Text(
                         'E-mail: info@beyondmediagr.com',
                         style: TextStyle(
                           fontSize: 14,

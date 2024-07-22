@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.backgroundColor, required this.colorSide,});
+  const CustomButton({super.key, required this.backgroundColor, required this.colorSide, this.onPressed,});
 final Color backgroundColor;
 final Color colorSide;
+final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -24,8 +25,7 @@ final Color colorSide;
           padding: const EdgeInsets.symmetric(
               horizontal: 30.0, vertical: 20.0),
         ),
-        onPressed: () {
-        },
+        onPressed: onPressed,
         child: const Row(
           mainAxisSize: MainAxisSize.min,
           children: [
