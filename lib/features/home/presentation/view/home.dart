@@ -9,6 +9,8 @@ import 'package:beyond_media/features/impression_appearing/presentation/view/imp
 import 'package:beyond_media/features/internal_development/peresentation/view/internal_development_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:icons_flutter/icons_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +20,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url,);
+    if (!await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    )
+    ) {
+      throw 'can not launch url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -337,10 +349,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ButtonsForServices(
                       color: AppColors.deepYellow,
                       text: 'Internal Development',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const InternalDevelopmentScreen(),));
+                      },
                       width: 240.w,
                       height: 60.h,
                     ),
+
                     SizedBox(
                       height: 20.h,
                     ),
@@ -352,7 +367,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ButtonsForServices(
                       color: AppColors.deepYellow,
                       text: 'Impression Appearing',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => ImpressionAppearingScreen(),));
+                      },
                       width: 240.w,
                       height: 60.h,
                     ),
@@ -367,7 +384,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ButtonsForServices(
                       color: AppColors.deepYellow,
                       text: 'E-Marketing',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => EMarketing(),));
+                      },
                       width: 240.w,
                       height: 60.h,
                     ),
@@ -673,7 +692,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 1.9,
+                height: MediaQuery.of(context).size.height * 2,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/stars.gif'),
@@ -763,6 +782,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 40.h,
+                        child: ElevatedButton(onPressed: (){}, child: Text('SEND'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )
+                        ),
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       height: 30.h,
                     ),
@@ -770,7 +804,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: ()async {
+                             await _launchUrl('https://www.facebook.com/beyondmediagr');
+                            },
                             icon: Icon(
                               Icons.facebook_outlined,
                               size: 50.sp,
@@ -779,9 +815,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           width: 20.w,
                         ),
                         IconButton(
-                            onPressed: () {},
+                            onPressed: ()async {
+                              await _launchUrl('https://www.instagram.com/beyondmediagr/');
+                            },
                             icon: Icon(
-                              Icons.monochrome_photos_sharp,
+                              AntDesign.instagram,
                               size: 50.sp,
                             )),
                       ],

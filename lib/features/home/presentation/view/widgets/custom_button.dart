@@ -71,8 +71,7 @@ final Color color ;
           padding: const EdgeInsets.symmetric(
               vertical: 20.0),
         ),
-        onPressed: () {
-        },
+        onPressed: onPressed,
         child:  Row(
           mainAxisSize: MainAxisSize.min,
           children: [
