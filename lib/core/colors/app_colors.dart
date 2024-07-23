@@ -8,4 +8,5 @@ abstract class AppColors {
   static Color deepBlack = const Color(0xff222222);
   static Color deepPink = const Color(0xffBD10E0);
   static Color deepYellow2 = const Color(0xff9FA851);
+  static Color deepWhite = const Color(0xffF6F6F6);
 }

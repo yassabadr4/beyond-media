@@ -4,7 +4,8 @@ import 'package:beyond_media/features/home/presentation/view/widgets/custom_butt
 import 'package:beyond_media/features/home/presentation/view/widgets/custom_text_button.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/image_reuse.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/text_buttons.dart';
-import 'package:beyond_media/features/internal_development/peresentation/view/e_marketing.dart';
+import 'package:beyond_media/features/e-marketing/presentation/view/e_marketing.dart';
+import 'package:beyond_media/features/impression_appearing/presentation/view/impression_appearing_screen.dart';
 import 'package:beyond_media/features/internal_development/peresentation/view/internal_development_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,42 +33,42 @@ class _HomeScreenState extends State<HomeScreen> {
                 text: 'HOME',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'STORY',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'ABOUT',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'SERVICES',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'OUR SYSTEMS',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'BLOG',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'SHOP',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'FAQ',
                 onPressed: () {},
               ),
-              Divider(),
+              const Divider(),
               CustomTextButton(
                 text: 'CONTACT',
                 onPressed: () {},
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         backgroundColor: AppColors.deepBlue,
@@ -193,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => EMarketing(),
+                              builder: (context) => const EMarketing(),
                             ),
                           );
                         },
@@ -235,6 +236,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       CustomButton(
                         backgroundColor: AppColors.deepBlue3,
                         colorSide: Colors.orange,
+                          onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ImpressionAppearingScreen(),));
+                          },
                       ),
                       Expanded(
                         child: Image.asset(
