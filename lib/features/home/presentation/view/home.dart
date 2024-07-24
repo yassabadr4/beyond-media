@@ -5,8 +5,11 @@ import 'package:beyond_media/features/home/presentation/view/widgets/custom_text
 import 'package:beyond_media/features/home/presentation/view/widgets/image_reuse.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/text_buttons.dart';
 import 'package:beyond_media/features/e-marketing/presentation/view/e_marketing.dart';
+import 'package:beyond_media/features/home/presentation/view/widgets/url_launcher.dart';
 import 'package:beyond_media/features/impression_appearing/presentation/view/impression_appearing_screen.dart';
 import 'package:beyond_media/features/internal_development/peresentation/view/internal_development_screen.dart';
+import 'package:beyond_media/features/our_system/presentation/view/main_our_system.dart';
+import 'package:beyond_media/features/services/presentation/view/services_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -58,12 +61,16 @@ class _HomeScreenState extends State<HomeScreen> {
               const Divider(),
               CustomTextButton(
                 text: 'SERVICES',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ServicesScreen(),));
+                },
               ),
               const Divider(),
               CustomTextButton(
                 text: 'OUR SYSTEMS',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainOurSystem(),));
+                },
               ),
               const Divider(),
               CustomTextButton(
@@ -532,16 +539,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           Expanded(
-                            child: TextButton(
-                                onPressed: () {},
-                                child: Text(
-                                  'Digital Marketing Agency',
-                                  style: TextStyle(
-                                    color: Colors.orange,
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                )),
+                            child: Text(
+                              'Digital Marketing Agency',
+                              style: TextStyle(
+                                color: Colors.orange,
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -787,13 +792,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: SizedBox(
                         width: double.infinity,
                         height: 40.h,
-                        child: ElevatedButton(onPressed: (){}, child: Text('SEND'),
+                        child: ElevatedButton(onPressed: (){},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orange,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )
-                        ),
+                        ), child: Text('SEND',style: TextStyle(color: Colors.white),),
                         ),
                       ),
                     ),
@@ -829,7 +834,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       radius: 40,
                       backgroundColor: Colors.grey.withOpacity(0.2),
                       child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                          launchPhone('+201282092419');
+                          },
                           icon: Icon(
                             Icons.phone,
                             size: 50.sp,
@@ -852,7 +859,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       radius: 40,
                       backgroundColor: Colors.grey.withOpacity(0.2),
                       child: IconButton(
-                          onPressed: () {},
+                          onPressed: () async{
+                            await _launchUrl('mailto:info@beyondmediagr.com');
+                          },
                           icon: Icon(
                             Icons.mail,
                             size: 50.sp,
@@ -941,31 +950,46 @@ class _HomeScreenState extends State<HomeScreen> {
                       SizedBox(
                         height: 30.h,
                       ),
-                      const Text(
-                        '> Impression Appearing',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ImpressionAppearingScreen(),));
+                        },
+                        child: const Text(
+                          '> Impression Appearing',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 30.h,
                       ),
-                      const Text(
-                        '> E-Marketing',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => EMarketing(),));
+                        },
+                        child: const Text(
+                          '> E-Marketing',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                       SizedBox(
                         height: 30.h,
                       ),
-                      const Text(
-                        '> Internal Development',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => InternalDevelopmentScreen(),));
+                        },
+                        child: const Text(
+                          '> Internal Development',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                       SizedBox(
