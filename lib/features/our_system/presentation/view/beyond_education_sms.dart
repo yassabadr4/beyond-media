@@ -17,40 +17,11 @@ class BeyondEducationSms extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 1.8,
               color: AppColors.deepBlue4,
               child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    Text(
-                      'Beyond Media',
-                      style: TextStyle(fontSize: 22.sp),
-                    ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    Text(
-                      'BeyondEducation SMS',
-                      style: TextStyle(
-                          fontSize: 30.sp, fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    Text(
-                      'School Management System streamlines communication between all stakeholders: students, teachers, parents and administrative staff, with dedicated web portal for any type of end-user. Keeping your students and parents engaged with the academic process is a crucial factor in each students’ success. School Management System school management solution offers a personalized portal to each type of user, ensuring that your institution is always engaged with teachers, students, and their parents.',
-                      style: TextStyle(
-                          fontSize: 25.sp, fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 50.h,
-                    ),
-                    Image.asset('assets/images/education.png'),
-                  ],
-                ),
-              ),
+                  padding: const EdgeInsets.all(10),
+                  child: EducationTitleRuse(
+                      title: 'BeyondEducation SMS',
+                      subtitle: 'School Management System streamlines communication between all stakeholders: students, teachers, parents and administrative staff, with dedicated web portal for any type of end-user. Keeping your students and parents engaged with the academic process is a crucial factor in each students’ success. School Management System school management solution offers a personalized portal to each type of user, ensuring that your institution is always engaged with teachers, students, and their parents.',
+                      imgPath: 'assets/images/education.png')),
             ),
             SizedBox(
               height: 20.h,
@@ -341,6 +312,52 @@ class EducationSmsRuse extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class EducationTitleRuse extends StatelessWidget {
+  const EducationTitleRuse(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      required this.imgPath});
+
+  final String title;
+  final String subtitle;
+  final String imgPath;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 30.h,
+        ),
+        Text(
+          'Beyond Media',
+          style: TextStyle(fontSize: 22.sp),
+        ),
+        SizedBox(
+          height: 30.h,
+        ),
+        Text(
+          title,
+          style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w700),
+        ),
+        SizedBox(
+          height: 30.h,
+        ),
+        Text(
+          subtitle,
+          style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w400),
+        ),
+        SizedBox(
+          height: 50.h,
+        ),
+        Image.asset(imgPath),
+      ],
     );
   }
 }

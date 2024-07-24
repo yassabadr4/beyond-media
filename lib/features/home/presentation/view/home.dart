@@ -23,6 +23,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final ScrollController _scrollController = ScrollController();
+
+  void _scrollToItem(int index) {
+    // Calculate the position to scroll to
+    double position = index * 1170.0; // Assuming each item has a height of 100.0
+    _scrollController.animateTo(
+      position,
+      duration: Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
   Future<void> _launchUrl(String url) async {
     final Uri uri = Uri.parse(url,);
     if (!await launchUrl(
@@ -45,18 +62,17 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomTextButton(
-                text: 'HOME',
-                onPressed: () {},
-              ),
-              const Divider(),
-              CustomTextButton(
                 text: 'STORY',
-                onPressed: () {},
+                onPressed: () {
+                  _scrollToItem(4);
+                },
               ),
               const Divider(),
               CustomTextButton(
                 text: 'ABOUT',
-                onPressed: () {},
+                onPressed: () {
+                  _scrollToItem(5);
+                },
               ),
               const Divider(),
               CustomTextButton(
@@ -117,9 +133,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: ListView(
-        children: [
-          Column(
+      body: ListView.builder(
+        controller: _scrollController,
+        itemBuilder: (context, index) {
+         return Column(
             children: [
               Container(
                 color: AppColors.deepBlue2,
@@ -159,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  const InternalDevelopmentScreen(),
+                              const InternalDevelopmentScreen(),
                             ),
                           );
                         },
@@ -255,9 +272,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       CustomButton(
                         backgroundColor: AppColors.deepBlue3,
                         colorSide: Colors.orange,
-                          onPressed: (){
+                        onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context) => ImpressionAppearingScreen(),));
-                          },
+                        },
                       ),
                       Expanded(
                         child: Image.asset(
@@ -793,12 +810,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: double.infinity,
                         height: 40.h,
                         child: ElevatedButton(onPressed: (){},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orange,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          )
-                        ), child: Text('SEND',style: TextStyle(color: Colors.white),),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              )
+                          ), child: Text('SEND',style: TextStyle(color: Colors.white),),
                         ),
                       ),
                     ),
@@ -810,7 +827,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         IconButton(
                             onPressed: ()async {
-                             await _launchUrl('https://www.facebook.com/beyondmediagr');
+                              await _launchUrl('https://www.facebook.com/beyondmediagr');
                             },
                             icon: Icon(
                               Icons.facebook_outlined,
@@ -835,7 +852,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       backgroundColor: Colors.grey.withOpacity(0.2),
                       child: IconButton(
                           onPressed: () {
-                          launchPhone('+201282092419');
+                            launchPhone('+201282092419');
                           },
                           icon: Icon(
                             Icons.phone,
@@ -1038,8 +1055,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ],
-          ),
-        ],
+          );
+        },
+        itemCount: 1,
       ),
     );
   }

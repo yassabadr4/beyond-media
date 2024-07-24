@@ -1,5 +1,7 @@
 import 'package:beyond_media/core/colors/app_colors.dart';
 import 'package:beyond_media/features/home/presentation/view/widgets/custom_button.dart';
+import 'package:beyond_media/features/our_system/presentation/view/beyond_education_sms.dart';
+import 'package:beyond_media/features/our_system/presentation/view/beyond_health_cms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,11 +30,13 @@ class MainOurSystem extends StatelessWidget {
               ],
             ),
             OurSystemReuse(
-              title: 'BeyondHealth SMS',
+              title: 'BeyondHealth CMS',
               subtitle:
-                  'BeyondHealth CMS Clinic Management System Setupyour clinic  with  BEYOND MEDIA.',
+                  'BeyondHealth CMS Clinic Management System Setup your clinic  with  BEYOND MEDIA.',
               color: AppColors.deepBlue3,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BeyondHealthCms(),));
+              },
               imgPath: 'assets/images/3737510-removebg-preview.png',
             ),
 
@@ -49,7 +53,9 @@ class MainOurSystem extends StatelessWidget {
               subtitle:
               'Beyond Education SMS The only software need to run your school Management Beautifully Designed and Intelligently Developed School Management System for Best User Experience.',
               color: AppColors.deepBlue3,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => BeyondEducationSms(),));
+              },
               imgPath: 'assets/images/2002.i203.022.online_education_distant_learning_cartoon-removebg-preview.png',
             ),
             OurSystemReuse(
